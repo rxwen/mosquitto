@@ -18,7 +18,7 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_C_INCLUDES += \
 	$(LOCAL_PATH)/lib
 
-LOCAL_CFLAGS +=
+LOCAL_CFLAGS += -D__ANDROID__
 
 LOCAL_SRC_FILES := \
 	lib/logging_mosq.c \
@@ -82,6 +82,7 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_CFLAGS += -DWITH_BROKER \
 	-DVERSION="\"$(shell git describe)\"" \
+	-D__ANDROID__ \
 	-DTIMESTAMP="\"$(shell date)\""
 
 LOCAL_LDLIBS += -ldl
